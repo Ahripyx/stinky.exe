@@ -4,7 +4,14 @@
              x:Class="Stinky.YesPage"
              Title="YesPage">
     <Grid>
-        <Image Source="catstare.jpg"
+        <Image Source="cathearts.jpg"
+           Aspect="Fill"
+           HorizontalOptions="Fill"
+           VerticalOptions="Fill" />
+
+        <Image Source="catrose.jpg"
+           IsVisible="False"
+           x:Name="catRose"
            Aspect="Fill"
            HorizontalOptions="Fill"
            VerticalOptions="Fill" />

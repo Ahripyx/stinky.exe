@@ -1,3 +1,4 @@
+using System.Net;
 using Plugin.Maui.Audio;
 
 namespace Stinky;
@@ -6,6 +7,7 @@ public partial class NoPage : ContentPage
 {
     private readonly IAudioManager audioManager;
     private IAudioPlayer player;
+    private IAudioPlayer sadViolin;
     public NoPage(IAudioManager audioManager)
 	{
 		InitializeComponent();
@@ -21,6 +23,11 @@ public partial class NoPage : ContentPage
         player.Loop = true;
         player.Play();
         player.Volume = 0.5;
+
+        sadViolin = audioManager.CreatePlayer(await FileSystem.OpenAppPackageFileAsync("sadviolin.mp3"));
+        sadViolin.Loop = true;
+        sadViolin.Play();
+        sadViolin.Volume = 0.5;
     }
 
 

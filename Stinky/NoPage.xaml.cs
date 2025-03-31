@@ -33,9 +33,10 @@ public partial class NoPage : ContentPage
 
     private async void PauseAudio()
     {
-        while (player.Volume > 0)
+        while (player.Volume > 0 && sadViolin.Volume > 0)
         {
             player.Volume -= 0.1;
+            sadViolin.Volume -= 0.1;
             await Task.Delay(100);
         }
         player.Pause();

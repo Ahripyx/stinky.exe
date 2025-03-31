@@ -12,6 +12,7 @@ public partial class YesPage : ContentPage
         NavigationPage.SetHasNavigationBar(this, false);
         this.audioManager = audioManager;
         AudioPlay();
+        SwitchImagesAfterDelay();
     }
 
     private async void AudioPlay()
@@ -29,5 +30,13 @@ public partial class YesPage : ContentPage
             await Task.Delay(100);
         }
         player.Pause();
+    }
+
+    private async void SwitchImagesAfterDelay()
+    {
+        await Task.Delay(3000); // 3-second delay
+        var firstImage = this.FindByName<Image>("catHearts");
+        firstImage.IsVisible = false;
+        catRose.IsVisible = true;
     }
 }

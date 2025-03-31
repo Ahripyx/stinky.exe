@@ -5,15 +5,16 @@
              Title="YesPage">
     <Grid>
         <Image Source="cathearts.jpg"
-           Aspect="Fill"
-           HorizontalOptions="Fill"
-           VerticalOptions="Fill" />
+               x:Name="catHearts"
+               Aspect="Fill"
+               HorizontalOptions="Fill"
+               VerticalOptions="Fill" />
 
         <Image Source="catrose.jpg"
-           IsVisible="False"
-           x:Name="catRose"
-           Aspect="Fill"
-           HorizontalOptions="Fill"
-           VerticalOptions="Fill" />
+               IsVisible="False"
+               x:Name="catRose"
+               Aspect="Fill"
+               HorizontalOptions="Fill"
+               VerticalOptions="Fill" />
     </Grid>
 </ContentPage>

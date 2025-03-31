@@ -1,9 +1,14 @@
-﻿namespace Stinky
+﻿using Plugin.Maui.Audio;
+
+namespace Stinky
 {
     public partial class App : Application
     {
-        public App()
+        private readonly IAudioManager _audioManager;
+
+        public App(IAudioManager audioManager)
         {
+            _audioManager = audioManager;
             InitializeComponent();
         }
 
@@ -12,7 +17,7 @@
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            var window = new Window(new MainPage())
+            var window = new Window(new MainPage(_audioManager))
             {
                 Width = wndWidth,
                 Height = wndHeight,

@@ -8,6 +8,7 @@
                Aspect="Fill"
                HorizontalOptions="Fill"
                VerticalOptions="Fill" />
+        
 
         <!-- Dialog Overlay -->
         <ContentView x:Name="dialogOverlay"
@@ -18,14 +19,15 @@
              VerticalOptions="FillAndExpand" />
 
         <!-- Dialog -->
-        <Frame x:Name="dialog"
-            BackgroundColor="White"
-            BorderColor="Black"
-            CornerRadius="10"
-            Padding="20"
-            IsVisible="False"
-            HorizontalOptions="Center"
-            VerticalOptions="Center">
+        <Border x:Name="dialog"
+                BackgroundColor="White"
+                Stroke="Black"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 10"
+                Padding="20"
+                IsVisible="False"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
             <StackLayout>
                 <Label Text="Are you stinky?"
                FontSize="20"
@@ -49,6 +51,6 @@
                     Clicked="OnNoButtonClicked" />
                 </StackLayout>
             </StackLayout>
-        </Frame>
+        </Border>
     </Grid>
 </ContentPage>

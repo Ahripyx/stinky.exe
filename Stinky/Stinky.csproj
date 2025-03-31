@@ -65,4 +65,13 @@
 		<PackageReference Include="Plugin.Maui.Audio" Version="3.1.0" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <MauiXaml Update="NoPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="YesPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>

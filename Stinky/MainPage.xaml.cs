@@ -26,10 +26,15 @@ namespace Stinky
             player.Play();
         }
 
-
-        private void PauseAudio()
+            
+        private async void PauseAudio()
         {
-            player?.Pause();
+            while (player.Volume > 0)
+            {
+                player.Volume -= 0.1;
+                await Task.Delay(100);
+            }
+            player.Pause();
         }
 
         private void ShowDialog()
@@ -43,16 +48,18 @@ namespace Stinky
             dialogOverlay.IsVisible = false;
             dialog.IsVisible = false;
         }
-        private void OnYesButtonClicked(object sender, EventArgs e)
+        private async void OnYesButtonClicked(object sender, EventArgs e)
         {
             HideDialog();
             PauseAudio();
+            Application.Current.MainPage = new NavigationPage(new YesPage());
         }
 
-        private void OnNoButtonClicked(object sender, EventArgs e)
+        private async void OnNoButtonClicked(object sender, EventArgs e)
         {
             HideDialog();
             PauseAudio();
+            Application.Current.MainPage = new NavigationPage(new NoPage());
         }
     }
 }

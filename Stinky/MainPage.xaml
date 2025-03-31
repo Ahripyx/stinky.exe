@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Stinky.MainPage">
+
+    <Grid>
+        <Image Source="catstare.jpg"
+               Aspect="Fill"
+               HorizontalOptions="Fill"
+               VerticalOptions="Fill" />
+
+        <!-- Dialog Overlay -->
+        <ContentView x:Name="dialogOverlay"
+             BackgroundColor="Black"
+             Opacity="0.5"
+             IsVisible="False"
+             HorizontalOptions="FillAndExpand"
+             VerticalOptions="FillAndExpand" />
+
+        <!-- Dialog -->
+        <Frame x:Name="dialog"
+            BackgroundColor="White"
+            BorderColor="Black"
+            CornerRadius="10"
+            Padding="20"
+            IsVisible="False"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <StackLayout>
+                <Label Text="Are you stinky?"
+               FontSize="20"
+               TextColor="Black"
+               HorizontalOptions="Center"
+               Margin="0,0,0,20" />
+                <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="Center"
+                     Spacing="20">
+                    <Button Text="Yes"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    BorderColor="Black"
+                    BorderWidth="1"
+                    Clicked="OnYesButtonClicked" />
+                    <Button Text="No"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    BorderColor="Black"
+                    BorderWidth="1"
+                    Clicked="OnNoButtonClicked" />
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>

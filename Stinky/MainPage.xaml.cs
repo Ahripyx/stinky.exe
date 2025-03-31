@@ -52,14 +52,14 @@ namespace Stinky
         {
             HideDialog();
             PauseAudio();
-            Application.Current.MainPage = new NavigationPage(new YesPage());
+            Application.Current.MainPage = new NavigationPage(new YesPage(audioManager));
         }
 
         private async void OnNoButtonClicked(object sender, EventArgs e)
         {
             HideDialog();
             PauseAudio();
-            Application.Current.MainPage = new NavigationPage(new NoPage());
+            Application.Current.MainPage = new NavigationPage(new NoPage(audioManager));
         }
     }
 }

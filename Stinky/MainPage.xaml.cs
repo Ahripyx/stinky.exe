@@ -9,6 +9,7 @@ namespace Stinky
     public partial class MainPage : ContentPage
     {
         private readonly IAudioManager audioManager;
+        private IAudioPlayer player;
 
         public MainPage(IAudioManager audioManager)
         {
@@ -21,8 +22,14 @@ namespace Stinky
 
         private async void AudioPlay()
         {
-            var player = audioManager.CreatePlayer(await FileSystem.OpenAppPackageFileAsync("ClubPenguinPizza.mp3"));
+            player = audioManager.CreatePlayer(await FileSystem.OpenAppPackageFileAsync("ClubPenguinPizza.mp3"));
             player.Play();
+        }
+
+
+        private void PauseAudio()
+        {
+            player?.Pause();
         }
 
         private void ShowDialog()
@@ -39,11 +46,13 @@ namespace Stinky
         private void OnYesButtonClicked(object sender, EventArgs e)
         {
             HideDialog();
+            PauseAudio();
         }
 
         private void OnNoButtonClicked(object sender, EventArgs e)
         {
             HideDialog();
+            PauseAudio();
         }
     }
 }

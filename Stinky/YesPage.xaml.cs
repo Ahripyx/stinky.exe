@@ -18,25 +18,16 @@ public partial class YesPage : ContentPage
     private async void AudioPlay()
     {
         player = audioManager.CreatePlayer(await FileSystem.OpenAppPackageFileAsync("catsing.m4a"));
+        player.Loop = true;
         player.Play();
-    }
-
-
-    private async void PauseAudio()
-    {
-        while (player.Volume > 0)
-        {
-            player.Volume -= 0.1;
-            await Task.Delay(100);
-        }
-        player.Pause();
     }
 
     private async void SwitchImagesAfterDelay()
     {
-        await Task.Delay(3000); // 3-second delay
+        await Task.Delay(4500); //4.5 second delay
         var firstImage = this.FindByName<Image>("catHearts");
         firstImage.IsVisible = false;
         catRose.IsVisible = true;
+        loveLabel.IsVisible = true;
     }
 }

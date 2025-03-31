@@ -16,5 +16,14 @@
                Aspect="Fill"
                HorizontalOptions="Fill"
                VerticalOptions="Fill" />
+
+        <Label Text="I love you bitch &lt;3"
+               x:Name="loveLabel"
+               IsVisible="False"
+               HorizontalOptions="Start"
+               VerticalOptions="End"
+               Margin="20,0,0,20"
+               TextColor="Black"
+               FontSize="75" />
     </Grid>
 </ContentPage>

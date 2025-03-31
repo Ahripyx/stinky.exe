@@ -33,4 +33,10 @@ public partial class NoPage : ContentPage
         }
         player.Pause();
     }
+
+    private async void OnTakeItBackButtonClicked(object sender, EventArgs e)
+    {
+        PauseAudio();
+        Application.Current.MainPage = new NavigationPage(new YesPage(audioManager));
+    }
 }
